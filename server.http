@@ -1,0 +1,44 @@
+### recuperar  todos los productos
+
+GET http://localhost:3000/products
+
+### Recuperar  un producto específico
+
+GET http://localhost:3000/products/A
+
+
+### Crear un producto
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "sql":  "SELECT * FROM products WHERE id = 1",
+    "name": "Producto prueba 4asd52",
+    "width": 20,
+    "height": 30,
+    "length": 10,
+    "stock": {
+        "quantity": 25
+    }
+}
+### Actualizar un producto
+
+PUT http://localhost:3000/products/163e316b-d1f3-4502-9ed4-f70b6b4beb39
+Content-Type: application/json
+
+{
+    "name": "Producto actualizado",
+    "width": 25,
+    "height": 35,
+    "length": 15,
+    "stock": {
+        "quantity": 30
+    }
+}
+### Eliminar un producto
+
+DELETE http://localhost:3000/products/A
+
+
+

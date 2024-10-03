@@ -1,0 +1,41 @@
+[
+    {
+        "id": "A",
+        "name": "Madera de roble",
+        "width": 20,
+        "height": 30,
+        "lenght": 10,
+        "stock": {
+            "id": "1",
+            "quantity": 10,
+            "outbound": 0,
+            "inbound": 0
+        }
+    },
+    {
+        "id": "B",
+        "name": "Madera de pino",
+        "width": 23,
+        "height": 45,
+        "lenght": 20,
+        "stock": {
+            "id": "1",
+            "quantity": 30,
+            "outbound": 10,
+            "inbound": 50
+        }
+    },
+    {
+        "id": "C",
+        "name": "Machimbre",
+        "width": 0,
+        "height": 0,
+        "lenght": 0,
+        "stock": {
+            "id": "1",
+            "quantity": 100,
+            "outbound": 0,
+            "inbound": 0
+        }
+    }
+]
