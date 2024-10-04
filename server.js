@@ -8,19 +8,31 @@ app.disable('X-Powered-By')
 const PORT = process.env.PORT ?? 3000;
 
 // Middleware para parsear el cuerpo de las solicitudes JSON
-app.use(cors());
-/*  
-Usando solo origenes que vos quieras que tengan  acceso a tu API
-app.us(cors({
-origin: (origin, callback)=>{
-const  allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
-}
-if  (allowedOrigins.includes(origin) || !origin) {
-    return  callback(null, true);
-}))
-return   callback(new Error('Not allowed by CORS'));
+//app.use(cors());
 
-*/
+//Usando solo origenes que vos quieras que tengan  acceso a tu API
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+    
+//     if(allowedOrigins.includes(origin) || !origin) {
+//     return  callback(null, true)
+
+// return callback(new Error('Not allowed by CORS'))
+// }
+// })
+
+
+app.use(cors({
+    origin: (origin, callback) => {
+        const  allowedOrigins = ['http://localhost:3000', 'http://localhost:3001',  'http://localhost:4200'];
+        if(allowedOrigins.includes(origin) || !origin) {
+            return callback(null, true)
+        }
+        return callback(new Error('Not allowed by CORS'))
+    }
+}))
+
 // NO BORRAR LOS COMENTARIOS. GRACIAS <3
 //app.use(bodyParser.json());
 app.use(express.json())
@@ -65,7 +77,7 @@ app.put('/products/:id', (req, res) => {
     }
     const updatedProduct = {
         ...dataProducts[productIndex],
-        ...result.data, 
+        ...result.data,
     }
     dataProducts[productIndex] = updatedProduct;
 
